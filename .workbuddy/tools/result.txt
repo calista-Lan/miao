@@ -1,0 +1,33 @@
+shots: p_relaxed,p_happy,p_alert,p_flick,p_annoyed_lift,p_annoyed_slap,p_angry_pop,p_angry,p_angry_lash0,p_angry_lash1,p_angry_lash2,p_angry_lash3,p_asleep,p_stalk,p_pounce,p_angry_night,p_needy,p_room_day,p_room_night,p_walk_left,p_walk_right,p_far_left,p_in_nest
+relaxed @76918
+annoyed @78404
+angry @78421
+alert @81427
+after release: alert / tailMode=alert
+head pet: state=relaxed tailMode=happy
+after head release: state=relaxed tailMode=walk msg="竖起来随步子轻摆 —— 它走得很自在"
+affection=1 bodyOffset=0
+tail-state class=tail-state tail-walk
+angrySeen={"relaxed":76918.19999999332,"annoyed":78404.49999999306,"angry":78421.19999999306,"alert":81427.19999999253}
+offline 10min -> sat=57 eng=50 mood=68
+offline msg="你离开了 10 分钟，猫一直在等你回来"
+feed@satiety95 -> fish=none msg="猫闻了闻就走开了 —— 它一点都不饿，这条鱼白喂了"
+feed@satiety20 -> started=falling sat=54 aff=55 stuffed=0
+toy@energy10 -> eng=10 msg="猫累得趴着不动 —— 让它先睡一会儿吧"
+hungry -> want=food tailMode=needy tailUI="尾尖大幅度来回扫动 —— 它有事要找你"
+satisfied -> want=null tailMode=relaxed
+needBars=90%/50%/90%
+errors=[]
+dustMax=10 joltFrames=20 tailMode=annoyed
+walkToLeft: cx=214 dir=0 frames=221 (minX=214)
+walkToRight: cx=648 dir=0 frames=244 (maxX=648)
+clampHigh: cx=648
+clampLow: cx=214
+quietWhile: asleep=0@400  annoyed=0@400  eating=0@400  petting=0@400  toy=0@400
+roamFrames=1212/3000 endCx=300
+spots={"sun":1158,"rug":568,"plant":372,"nest":902}
+tiredPick=nest  freshPick=rug
+walkShare=40%
+modes ok? []
+angerGrid: 24x24
+roomDayMix=1

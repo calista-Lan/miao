@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>读懂猫 v0.8</title>
+  <link rel="stylesheet" href="mao.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title-block">
+        <h1 class="title">读懂猫 <span class="ver">v0.8</span></h1>
+        <p class="subtitle" id="cat-name">橘色虎斑 · 你的虚拟猫</p>
+      </div>
+      <div class="toolbar">
+        <button id="btn-sound" class="tool-btn" title="声音开关（M）">🔊</button>
+        <button id="btn-night" class="tool-btn" title="昼夜切换（N）">🌙</button>
+        <button id="btn-toy"   class="tool-btn" title="逗猫棒（T）">🎣</button>
+        <button id="btn-feed"  class="tool-btn" title="投喂小鱼干（F）">🐟</button>
+        <button id="btn-color" class="tool-btn" title="换毛色（C）">🎨</button>
+        <button id="btn-reset" class="tool-btn danger" title="重置全部进度">↺</button>
+      </div>
+    </header>
+
+    <div class="hud-top">
+      <div class="stat">
+        <span class="label">好感度</span>
+        <div class="bar-bg"><div id="affection-bar" class="bar-fill"></div></div>
+        <span id="affection-value">50</span>
+      </div>
+      <div class="stat">
+        <span class="label">头衔</span>
+        <span id="cat-title" class="cat-title">👀 熟人</span>
+      </div>
+      <div class="stat">
+        <span class="label">状态</span>
+        <span id="cat-state" class="cat-state cat-state-relaxed">放松</span>
+      </div>
+    </div>
+
+    <canvas id="cat-canvas" width="800" height="500"></canvas>
+
+    <div class="needs-row">
+      <div class="need">
+        <span class="need-label">饱食</span>
+        <div class="need-bg"><div id="need-satiety" class="need-fill"></div></div>
+      </div>
+      <div class="need">
+        <span class="need-label">精力</span>
+        <div class="need-bg"><div id="need-energy" class="need-fill"></div></div>
+      </div>
+      <div class="need">
+        <span class="need-label">心情</span>
+        <div class="need-bg"><div id="need-mood" class="need-fill"></div></div>
+      </div>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <div class="tail-row">
+      <span class="tail-tag">尾巴</span>
+      <span id="tail-state" class="tail-state">自然平放，尾尖缓慢轻摆 —— 它很放松</span>
+    </div>
+
+    <div class="stats-row">
+      <span>历史最高<b id="stat-best">50</b></span>
+      <span>累计抚摸<b id="stat-pettime">0</b>秒</span>
+      <span>互动<b id="stat-pets">0</b>次</span>
+    </div>
+
+    <div class="hint">
+      点击猫的头或尾巴，按住抚摸 · 猫饿了、累了、闷了都会主动来找你<br>
+      撸猫不能一直撸：摸久了它会腻，尾巴抽动就是警告，再摸就要翻脸<br>
+      它自己会在屋里走动：去猫窝趴着、去窗边晒太阳，尾巴会跟着步子摆<br>
+      挑它饿的时候喂，好感度更高；吃太饱它会扭头走开，没力气时也逗不动<br>
+      快捷键：M 声音 / N 昼夜 / T 逗猫棒 / F 投喂 / C 换毛色
+    </div>
+  </div>
+
+  <script src="miao.js"></script>
+</body>
+</html>
